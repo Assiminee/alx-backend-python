@@ -9,7 +9,7 @@ from asyncio import as_completed
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def wait_n(n: int, max_delay: int) -> list[float]:
+async def wait_n(n: int, max_delay: int) -> list:
     """
     performs n calls of the wait_random method,
     stores the return value of each call in a list,
