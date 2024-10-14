@@ -18,7 +18,8 @@ async def wait_n(n: int, max_delay: int) -> list[float]:
     :param max_delay: maximum delay of async coroutine
     :return: list of delays
     """
-    tasks: list[asyncio.Task] = [asyncio.create_task(wait_random(max_delay)) for _ in range(n)]
+    tasks: list[asyncio.Task] = [asyncio.create_task(wait_random(max_delay))
+                                 for _ in range(n)]
     delays: list = []
     for task in as_completed(tasks):
         delay: float = await task
