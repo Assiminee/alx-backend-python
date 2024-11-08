@@ -43,7 +43,7 @@ class TestGithubOrgClient(unittest.TestCase):
             'repos': [
                 {
                     "id": 1918182,
-                    "name": "assimine.repo.1",
+                    "name": "rep.1",
                     "private": True,
                     "owner": {
                         "login": "assimine",
@@ -59,7 +59,7 @@ class TestGithubOrgClient(unittest.TestCase):
                 },
                 {
                     "id": 111111,
-                    "name": "assimine.repo.2",
+                    "name": "rep.2",
                     "private": False,
                     "owner": {
                         "login": "assimine",
