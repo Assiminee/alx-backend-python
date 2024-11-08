@@ -13,6 +13,7 @@ class TestAccessNestedMap(unittest.TestCase):
     """
     Test class for the method utils.access_nested_map
     """
+
     @parameterized.expand([
         ({"a": 1}, ("a",), 1),
         ({"a": {"b": 2}}, ("a",), {"b": 2}),
@@ -34,7 +35,7 @@ class TestAccessNestedMap(unittest.TestCase):
         ({"a": 1}, ("a", "b"), KeyError)
     ])
     def test_access_nested_map_exception(
-        self, nested_map: Dict, path: Tuple[str], exception: Exception
+            self, nested_map: Dict, path: Tuple[str], exception: Exception
     ) -> None:
         """
         Tests that a KeyError is raised for
@@ -48,6 +49,7 @@ class TestGetJson(unittest.TestCase):
     """
     Test class for the method get_json
     """
+
     @parameterized.expand([
         ("http://example.com", {"payload": True}),
         ("http://holberton.io", {"payload": False})
@@ -72,11 +74,14 @@ class TestGetJson(unittest.TestCase):
 
 
 class TestMemoize(unittest.TestCase):
-    """ Test class for the method memoize """
+    """ Test class for the memoize decorator """
+
     def test_memoize(self):
         """ Test method for memoize """
+
         class TestClass:
-            """ Inner class for testing memoize """
+            """ Inner class to test memoize decorator """
+
             def a_method(self):
                 """ Helper method """
                 return 42
@@ -89,8 +94,8 @@ class TestMemoize(unittest.TestCase):
         with patch.object(
                 TestClass,
                 "a_method",
+                return_value=42,
         ) as memo_fn:
-            memo_fn.return_value = 42
             test_class = TestClass()
             self.assertEqual(test_class.a_property, 42)
             self.assertEqual(test_class.a_property, 42)
