@@ -50,7 +50,7 @@ class TestGithubOrgClient(unittest.TestCase):
                         "id": 92039,
                     },
                     "fork": False,
-                    "url": "https://api.github.com/repos/assimine/assimine.repo.1",
+                    "url": "https://api.github.com/repos/assimine/rep.1",
                     "created_at": "2022-11-01T00:31:37Z",
                     "updated_at": "2023-09-23T11:53:58Z",
                     "has_issues": False,
@@ -66,7 +66,7 @@ class TestGithubOrgClient(unittest.TestCase):
                         "id": 92039,
                     },
                     "fork": False,
-                    "url": "https://api.github.com/repos/assimine/assimine.repo.2",
+                    "url": "https://api.github.com/repos/assimine/rep.2",
                     "created_at": "2020-03-04T22:52:33Z",
                     "updated_at": "2024-11-15T22:22:16Z",
                     "has_issues": True,
@@ -83,8 +83,8 @@ class TestGithubOrgClient(unittest.TestCase):
             self.assertEqual(
                 GithubOrgClient("assimine").public_repos(),
                 [
-                    "assimine.repo.1",
-                    "assimine.repo.2"
+                    "rep.1",
+                    "rep.2"
                 ],
             )
             mock_pub.assert_called_once()
